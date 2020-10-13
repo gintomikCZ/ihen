@@ -1,3 +1,3 @@
 # iHen
 
-demo is running at https://ihendemo/glabazna.eu
+demo is running at https://ihendemo.glabazna.eu

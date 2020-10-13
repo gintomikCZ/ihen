@@ -45,7 +45,18 @@
 export default {
   name: 'EggForm',
   props: {
-
+    formInitialized: {
+      type: Boolean,
+      default: false
+    }
+  },
+  watch: {
+    formInitialized (nv) {
+      if (nv) {
+        this.forceFocus = true
+        this.$emit('initilized')
+      }
+    }
   },
   data () {
     return {
@@ -60,6 +71,9 @@ export default {
         label: 'uložit a další'
       }
     }
+  },
+  mounted () {
+    this.forceFocus = true
   },
   computed: {
     weightError () {
@@ -117,9 +131,7 @@ export default {
     onNextClick () {
       const day = this.day
       return this.$store.dispatch('eggForm/onSubmit').then(() => {
-        this.day = day
-        this.weight = ''
-        this.forceFocus = true
+        this.$emit('renew-form', day)
       })
     }
   }

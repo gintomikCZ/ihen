@@ -1,15 +1,16 @@
 <template>
-  <page-wrap>
-    <t-loading v-if="loading" />
-    <template v-else>
-      <div class="container egg-form-title">
-        <h3 class="view-title">
-          nové vejce
-        </h3>
-      </div>
-      <egg-form @close-form="onCloseForm" />
-    </template>
-  </page-wrap>
+  <div v-if="!loading">
+    <div class="container egg-form-title">
+      <h3 class="view-title">
+        nové vejce
+      </h3>
+    </div>
+    <egg-form
+      :form-initialized="formInitialized"
+      @close-form="onCloseForm"
+      @renew-form="renewForm"
+      @initialized="formInitialized = false" />
+  </div>
 </template>
 <script>
 import EggForm from './EggForm.vue'
@@ -22,7 +23,8 @@ export default {
   data () {
     return {
       loading: true,
-      dayString: null
+      dayString: null,
+      formInitialized: false
     }
   },
   created () {
@@ -37,14 +39,20 @@ export default {
   methods: {
     onCloseForm (day) {
       this.$router.push('/day/' + day)
+    },
+    renewForm (day) {
+      this.loading = true
+      return this.$store.dispatch('eggForm/initializeForm', { day }).then(() => {
+        this.loading = false
+        this.formInitialized = true
+      })
     }
   }
 }
 </script>
 <style lang="stylus">
-
-.egg-form-title
-  text-align: center
+.egg-form-title {
+  text-align: center;
   margin-bottom: 1rem;
-  
+}
 </style>

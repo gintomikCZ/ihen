@@ -1,0 +1,293 @@
+:root
+  margin: 0
+  --body-background: #4f4f4f
+  --background-color: #efefef
+  --text-hover-color: #6D1a36
+  --text-color-light: #6a6a6a
+  --text-color-dark: #171717
+  --text-color: #3f3f3f
+  --primary100: #ffe2e7
+  --primary200: #ffd8df
+  --primary300: #ffc6d1
+  --primary400: #ffa7b7
+  --primary500: #ff8ea3
+  --primary600: #ff5273
+  --secondary100: #e1f5dc
+  --secondary200: #caeec1
+  --secondary300: #b3e7a7
+  --secondary400: #8cdb7a
+  --secondary600: #52c837
+  --primary: #6C4B5E
+  --accent: #ff3a5e
+  --accent-light: #ff8ea3
+  --border-light: #e3e3e3
+  --border: #b2b2b2
+  --border-radius: 3px
+  --focus-shadow: 0 0 0 2px #1396b6, 0 0 0 4px #3fc8eb
+  --input-padding: 0.25em 0.75em
+  --font-family-headers: 'Fira Sans Condensed', sans-serif
+  --font-family-text: 'Fira Sans Condensed', sans-serif
+  --secondary: #ACFCD9
+  --layout-bg-color: #efefef
+  --link-active-color: #ff3a5e
+  --today-bg: #6C4B5E
+  --holiday-bg: #EADEDA
+  --today-color: #fff
+  --today-bg: #b3e7a7
+  --today-hover-bg: #b3e7a7
+  --standard-day-bg: #fff
+  --standard-day-hover-bg: #dedede
+  --holiday-bg:#ff8ea3
+  --holiday-hover-bg: #ff8ea3
+
+html
+  font-size: 62.5%
+  min-width: 320px
+  min-height: 320px
+
+body 
+  min-width: 320px
+  min-height: 320px
+  font-size: 1.6rem
+  margin: 0
+  background: var(--body-background)
+  color: var(--text-color)
+  font-family: var(--font-family-text)
+  overflow: hidden
+
+body *, body *::after, body *::before 
+  box-sizing: border-box
+  margin: 0
+main
+  flex: 1 0 0
+  overflow-y: auto
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+img 
+  max-width: 100%
+  display: block
+
+h1, h2, h3, h4, h5, h6 
+  font-family: var(--font-family-headers)
+  line-height: 1.2
+  color: var(--text-color-dark)
+
+h1 
+  font-size: 5.0rem
+
+h2 
+  font-size: 3.8rem
+
+h3 
+  font-size: 2.6rem
+
+h4 
+  font-size: 1.8rem
+
+h6, h5
+  font-size 1.6rem;
+
+#app
+  height: 100vh
+  width: 100vw
+  background: var(--background-color)
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  position: fixed
+
+.has-not-navi
+  padding-top: 11.3rem
+  padding-bottom: 9.1rem
+
+.has-navi 
+  padding-top: 16.9rem
+  padding-bottom: 2.7rem
+
+.container
+  width: 100%
+  margin: 0 auto
+  padding: 1rem 2rem
+
+header.container
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  flex-direction:column
+  width: 100
+
+@media only screen and (min-width: 450px) {
+  #app {
+    width: 80vw;
+    left: 10vw;
+  }
+  .container, footer {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  header.container, footer {
+    width: 80vw;
+    left: 10vw;
+  }
+}
+
+@font-face
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-Regular.ttf)
+  font-weight: 400
+  font-style: normal
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-Medium.ttf)
+  font-weight: 500
+  font-style: normal
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-SemiBold.ttf)
+  font-weight: 600
+  font-style: normal
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-Bold.ttf)
+  font-weight: 700
+  font-style: normal
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-Italic.ttf)
+  font-weight: 400
+  font-style: italic
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-MediumItalic.ttf)
+  font-weight: 500
+  font-style: italic
+
+@font-face 
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-SemiBoldItalic.ttf)
+  font-weight: 600
+  font-style: italic
+
+@font-face
+  font-family: 'Fira Sans Condensed'
+  src: url(./styles/fonts/FiraSansCondensed-BoldItalic.ttf)
+  font-weight: 700
+  font-style: italic
+
+.flex-centered
+  display: flex
+  justify-content: center
+
+.page-content, .month-page-content 
+  flex: 0 0 auto
+  display: flex
+  min-width: 0rem
+  flex-direction: column
+  align-items: center
+
+.page-buttons 
+  margin-top: 1rem
+  align-self: center
+  max-width: 200px
+
+.page-buttons > *:not(:last-child) 
+  margin-bottom: 0.2rem
+
+.page-eggs 
+  display: flex
+  flex-direction: column
+
+.egg-group 
+  display: flex
+  justify-content: center
+  margin: 0.8rem 0
+
+.egg-cell 
+  display:  flex
+  min-width: 44px
+  min-height: 66px
+  align-items: center
+  flex-direction: column
+  justify-content: center
+  border: 1px solid var(--border)
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%
+  margin: 0 4px
+
+.egg-cell:last-child 
+    margin-right: 0
+
+@media only screen and (min-width: 450px) {
+  .page-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .page-content > *:first-child {
+    flex: 0 0 48%;
+  }
+  .page-content > *:last-child {
+    flex: 0 0 48%;
+  }
+  .page-buttons {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .month-page-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.egg-index
+  flex: 0 0 22px
+  background: #efefef
+  color: var(--text-color-dark)
+  font-size: 1.3rem
+
+.egg-weight 
+  color: var(--text-color-dark)
+  font-weight: 600
+  font-family: var(--font-family-text)
+  font-size: 1.4rem
+
+.egg-weight > *:last-child 
+    margin-left: .3rem
+
+.egg-edit-popover-field 
+  margin: 2rem 
+
+.egg-edit-popover 
+  position: absolute
+  display: flex
+  flex-direction: column
+  border-radius: var(--border-radius)
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.24)
+  padding: 1rem 1.5rem
+  background: var(--secondary100)
+
+.egg-edit-popover-message 
+  color: var(--text-color-dark)
+  padding: 0 0 1rem
+  border-bottom: 1px solid var(--border)
+  font-size: 1.6rem
+  font-weight: 600
+
+.egg-edit-popover-buttons 
+  padding-top: 1.5rem
+  display: flex
+  justify-content: flex-end
+
+.egg-edit-popover-buttons > *:first-child 
+  margin-right: 1rem
+
+.page-eggs-edit 
+  position: relative
+  margin-top: 1rem
+
